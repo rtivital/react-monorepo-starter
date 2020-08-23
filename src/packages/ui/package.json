@@ -1,0 +1,16 @@
+{
+  "name": "@monorepo/ui",
+  "description": "UI react components to build internal tools",
+  "version": "1.0.0",
+  "author": "Vitaly Rtishchev <rtivital@gmail.com>",
+  "dependencies": {},
+  "devDependencies": {
+    "webpack-cli": "^3.3.12"
+  },
+  "peerDependencies": {},
+  "license": "MIT",
+  "main": "dist/lib.js",
+  "scripts": {
+    "build": "webpack-cli"
+  }
+}
