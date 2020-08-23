@@ -79,6 +79,7 @@ module.exports = {
           '**/storybook/*.js',
           '**/webpack.config.js',
           '**/*.webpack.config.js',
+          'webpack/*',
         ],
       },
     ],
