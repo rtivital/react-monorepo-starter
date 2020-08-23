@@ -7,7 +7,11 @@
   "devDependencies": {
     "webpack-cli": "^3.3.12"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "classnames": "^2.2.6",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1"
+  },
   "license": "MIT",
   "main": "dist/lib.js",
   "scripts": {
