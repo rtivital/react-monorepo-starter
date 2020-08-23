@@ -1,11 +1,15 @@
+const fs = require('fs-extra');
 const path = require('path');
 const webpack = require('webpack');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const loaders = require('./loaders');
+const getPackageAlias = require('./get-package-alias');
 
 module.exports = function getPackageConfig({ base, publicPath = '/' } = {}) {
+  const { name } = fs.readJsonSync(path.join(base, './package.json'));
+
   return {
     mode: 'production',
     devtool: false,
@@ -19,6 +23,7 @@ module.exports = function getPackageConfig({ base, publicPath = '/' } = {}) {
       extensions: ['.js', '.jsx'],
       alias: {
         '~': path.join(base, './src'),
+        ...getPackageAlias(name),
       },
     },
 
