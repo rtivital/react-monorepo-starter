@@ -8,6 +8,10 @@ const getPackagePath = require('./utils/get-package-path');
 
 const packageName = argv._[0];
 
+if (typeof argv.port === 'number') {
+  process.env.PORT = argv.port;
+}
+
 const helpMessage = `npm start script usage: ${chalk.cyan('npm start @app/name')}\n`;
 
 function throwError(error) {

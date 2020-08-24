@@ -6,12 +6,12 @@ const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const getPort = require('get-port');
+const getPort = require('get-port-sync');
 const loaders = require('./loaders');
 const getPackageAlias = require('../scripts/utils/get-package-alias');
 const getBasePaths = require('./get-base-paths');
 
-module.exports = async function getPackageConfig({
+module.exports = function getPackageConfig({
   base,
   publicPath = '/',
   mode = 'production',
@@ -19,7 +19,7 @@ module.exports = async function getPackageConfig({
 } = {}) {
   const { name } = fs.readJsonSync(path.join(base, './package.json'));
   const { entry, output } = getBasePaths(base);
-  const port = settingsPort || (await getPort({ port: getPort.makeRange(7000, 7100) }));
+  const port = process.env.PORT || settingsPort || getPort();
 
   return {
     mode,

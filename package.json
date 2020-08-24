@@ -10,6 +10,9 @@
     "src/packages/*",
     "src/apps/*"
   ],
+  "scripts": {
+    "start": "node scripts/start-app-dev-server"
+  },
   "devDependencies": {
     "@babel/core": "^7.11.4",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
@@ -36,6 +39,7 @@
     "file-loader": "^6.0.0",
     "fs-extra": "^9.0.1",
     "get-port": "^5.1.1",
+    "get-port-sync": "^1.0.1",
     "html-webpack-plugin": "^4.3.0",
     "less-loader": "^6.2.0",
     "mini-css-extract-plugin": "^0.10.0",
