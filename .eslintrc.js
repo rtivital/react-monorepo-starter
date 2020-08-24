@@ -1,3 +1,5 @@
+const getSrcMap = require('./scripts/utils/get-src-map');
+
 module.exports = {
   parser: 'babel-eslint',
   extends: ['airbnb'],
@@ -98,6 +100,10 @@ module.exports = {
     'import/resolver': {
       node: {},
       webpack: {},
+      alias: {
+        map: Object.entries(getSrcMap()),
+        extensions: ['.ts', '.js', '.jsx', '.json'],
+      },
     },
   },
 };

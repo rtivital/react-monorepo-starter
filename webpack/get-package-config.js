@@ -5,7 +5,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const loaders = require('./loaders');
-const getPackageAlias = require('./get-package-alias');
+const getPackageAlias = require('../scripts/utils/get-package-alias');
 
 module.exports = function getPackageConfig({ base, publicPath = '/' } = {}) {
   const { name } = fs.readJsonSync(path.join(base, './package.json'));

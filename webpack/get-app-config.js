@@ -8,7 +8,7 @@ const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const getPort = require('get-port');
 const loaders = require('./loaders');
-const getPackageAlias = require('./get-package-alias');
+const getPackageAlias = require('../scripts/utils/get-package-alias');
 const getBasePaths = require('./get-base-paths');
 
 module.exports = async function getPackageConfig({
