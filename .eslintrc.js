@@ -80,6 +80,7 @@ module.exports = {
           '**/webpack.config.js',
           '**/*.webpack.config.js',
           'webpack/*',
+          'scripts/**',
         ],
       },
     ],
