@@ -11,7 +11,8 @@
     "src/apps/*"
   ],
   "scripts": {
-    "start": "node scripts/start-app-dev-server"
+    "start": "node scripts/start-app-dev-server",
+    "storybook": "node storybook/start"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
