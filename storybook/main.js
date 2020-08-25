@@ -16,12 +16,15 @@ if (packages.length !== 0) {
     if (packagePath) {
       stories.push(path.join(packagePath, 'src/**/*.story.@(jsx|mdx)'));
     } else {
-      process.stdout.write(chalk.yellow(`Unable to resolve ${packageName}`));
+      process.stdout.write(chalk.yellow(`Warning: Unable to resolve ${packageName}, skipping\n`));
     }
   });
 }
 
 if (stories.length === 0) {
+  process.stdout.write(
+    chalk.yellow('Warning: None of the defined packages can be found, loading default set\n\n')
+  );
   stories = DEFAULT_STORIES;
 }
 
