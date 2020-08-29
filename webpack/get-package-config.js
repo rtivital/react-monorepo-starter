@@ -22,7 +22,6 @@ module.exports = function getPackageConfig({ base, publicPath = '/' } = {}) {
     resolve: {
       extensions: ['.js', '.jsx'],
       alias: {
-        '~': path.join(base, './src'),
         ...getPackageAlias(name),
       },
     },

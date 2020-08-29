@@ -3,6 +3,7 @@ const chalk = require('chalk');
 const { argv } = require('yargs');
 const loaders = require('../webpack/loaders');
 const getPackagePath = require('../scripts/utils/get-package-path');
+const getSrcMap = require('../scripts/utils/get-src-map');
 
 const DEFAULT_STORIES = ['../src/**/*.story.@(jsx|mdx)'];
 const packages = argv._;
@@ -32,6 +33,13 @@ module.exports = {
   stories,
   webpackFinal: (config, { configType }) => {
     config.module.rules.push(loaders.less({ publicPath: '/', mode: configType.toLowerCase() }));
+
+    // eslint-disable-next-line no-param-reassign
+    config.resolve.alias = {
+      ...(config.resolve.alias || null),
+      ...getSrcMap(),
+    };
+
     return config;
   },
 };
