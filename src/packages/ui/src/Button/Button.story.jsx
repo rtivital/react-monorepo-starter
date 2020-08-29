@@ -11,5 +11,5 @@ const Template = args => <Button {...args} />;
 export const GeneralUsage = Template.bind({});
 
 GeneralUsage.args = {
-  children: 'Primary',
+  children: 'General usage',
 };
