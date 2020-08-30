@@ -4,9 +4,7 @@
   "version": "1.0.0",
   "author": "Vitaly Rtishchev <rtivital@gmail.com>",
   "dependencies": {},
-  "devDependencies": {
-    "webpack-cli": "^3.3.12"
-  },
+  "devDependencies": {},
   "peerDependencies": {
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
@@ -14,7 +12,5 @@
   },
   "license": "MIT",
   "main": "dist/lib.js",
-  "scripts": {
-    "build": "webpack-cli"
-  }
+  "scripts": {}
 }
