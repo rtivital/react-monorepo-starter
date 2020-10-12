@@ -40,7 +40,7 @@ It is a good idea to use the same scope (`@scope/`) for each package in monorepo
 
 Any package can refer to other package using webpack aliases that are automatically generated. Packages and apps aliases resolve src directory of corresponding package.
 
-```jsx
+```js
 // example with included @monorepo/hello-world app
 import React from 'react';
 import { Text } from '@monorepo/typography';
@@ -55,3 +55,25 @@ export default function App() {
   );
 }
 ```
+
+### Managing dependencies
+
+There are two approaches for managing dependencies in monorepo. You can combine both to reach desired behaviour.
+
+#### Shared dependencies
+
+- On **core** level: install all globally used dependencies: react, prop-types, classnames, etc. (All dependencies that are expected to use in each package). Install these dependencies as peers on **package** level.
+- On **package** level: install package specific dependencies that are used only in this package.
+
+This approach will allow you to quickly update shared dependencies without need to get through each package and updating versions.
+
+#### Packages dependencies
+
+- On **core** level do not install any package related dependencies.
+- On **package** level install all package dependencies.
+
+This approach is pretty heavy and hard to use but will allow you to fully manage versions of dependencies used in each package.
+
+### Have questions?
+
+Let's talk, I'm always open for discussion, please create an issue with your question.
