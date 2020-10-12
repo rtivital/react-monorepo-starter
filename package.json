@@ -1,19 +1,16 @@
 {
   "name": "react-monorepo-starter",
   "version": "1.0.0",
-  "main": "index.js",
-  "private": true,
-  "repository": "https://github.com/rtivital/react-monorepo-starter",
   "author": "Vitaly Rtishchev <rtivital@gmail.com>",
-  "license": "MIT",
-  "workspaces": [
-    "src/packages/*",
-    "src/apps/*"
-  ],
-  "scripts": {
-    "start": "node scripts/start-app-dev-server",
-    "storybook": "node storybook/start",
-    "build": "node scripts/build-package"
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "open-color": "^1.7.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-hot-loader": "^4.12.21",
+    "react-router-dom": "^5.2.0",
+    "uuid": "^8.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
@@ -50,20 +47,28 @@
     "postcss-loader": "^3.0.0",
     "rimraf": "^3.0.2",
     "style-loader": "^1.2.1",
+    "syncpack": "^5.6.10",
     "terser-webpack-plugin": "^4.1.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "yargs": "^15.4.1"
   },
-  "dependencies": {
-    "classnames": "^2.2.6",
-    "open-color": "^1.7.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-hot-loader": "^4.12.21",
-    "react-router-dom": "^5.2.0",
-    "uuid": "^8.3.0"
-  }
+  "license": "MIT",
+  "main": "index.js",
+  "private": true,
+  "repository": "https://github.com/rtivital/react-monorepo-starter",
+  "scripts": {
+    "build": "node scripts/build-package",
+    "start": "node scripts/start-app-dev-server",
+    "storybook": "node storybook/start",
+    "syncpack:format": "syncpack format",
+    "syncpack:list": "syncpack list --prod --dev --peer",
+    "syncpack:mismatch": "syncpack list-mismatches",
+    "syncpack:mismatch:fix": "syncpack fix-mismatches"
+  },
+  "workspaces": [
+    "src/packages/*",
+    "src/apps/*"
+  ]
 }

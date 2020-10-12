@@ -14,6 +14,11 @@ This project includes bare minimum configuration that you can use to work with r
 - **Build** script:
   - `npm run build @package/name` – build single package
   - `npm run build @package/first @package/second` – build list of packages
+- **Syncpack** scripts:
+  - `npm run syncpack:list` – list all used dependencies
+  - `npm run syncpack:format` – format all package.json files
+  - `npm run syncpack:mismatch` – list dependencies with different versions (e.g. react@16 and react@17 used in different packages) – can be used in precommit hook to check dependencies sync
+  - `npm run syncpack:mismatch:fix` – update all dependencies listed by `npm run syncpack:mismatch` to highest used version
 
 ## Technical details and concepts
 
