@@ -48,7 +48,7 @@ if (!fs.existsSync(path.join(packagePath, 'webpack.config.js'))) {
     throwParsingError('app does not have dev server configuration in webpack config');
   }
 
-  new WebpackDevServer(webpack(config)).listen(config.devServer.port, 'localhost', error => {
+  new WebpackDevServer(webpack(config), { historyApiFallback: true }).listen(config.devServer.port, 'localhost', error => {
     if (error) {
       /* eslint-disable-next-line no-console */
       console.error(error);
